@@ -1,4 +1,8 @@
-﻿using Microsoft.Extensions.Logging;
+﻿using FIP.Repositories;
+using Microsoft.Extensions.Logging;
+using Microsoft.Maui.LifecycleEvents;
+using CommunityToolkit.Maui;
+using Microsoft.Maui.Controls.Compatibility.Hosting;
 
 namespace FIP
 {
@@ -16,8 +20,17 @@ namespace FIP
                 });
 
 #if DEBUG
-    		builder.Logging.AddDebug();
+            builder.Logging.AddDebug();
 #endif
+
+            builder.ConfigureLifecycleEvents(e =>
+            {
+#if WINDOWS
+           
+#endif
+            });
+            string dbPath = Path.Combine(FileSystem.AppDataDirectory, "fip.db3");
+            builder.Services.AddSingleton<PersonRepository>(s => ActivatorUtilities.CreateInstance<PersonRepository>(s, dbPath));
 
             return builder.Build();
         }

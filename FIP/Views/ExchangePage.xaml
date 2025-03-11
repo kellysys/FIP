@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="FIP.Views.ExchangePage"
+             Title="Exchange">
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style TargetType="Grid">
+                <Setter Property="Margin" Value="10,2,10,2" />
+            </Style>
+            <Style TargetType="Editor">
+                <Setter Property="VerticalTextAlignment" Value="Center" />
+                <Setter Property="HorizontalTextAlignment" Value="Center" />
+                <Setter Property="Margin" Value="10,0,10,0" />
+            </Style>
+            <Style TargetType="Label">
+                <Setter Property="VerticalTextAlignment" Value="Center" />
+                <Setter Property="HorizontalTextAlignment" Value="Center" />
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <VerticalStackLayout Spacing="10">
+        <Grid ColumnDefinitions="Auto,*,Auto,*">
+            <Label Grid.Column="0" Text="{Binding From1}" />
+            <Editor Grid.Column="1" Text="{Binding Money1}" />
+            <Label Grid.Column="2" Text="{Binding To1}" />
+            <Editor Grid.Column="3" Text="{Binding Result1}" />
+        </Grid>
+
+        <Grid ColumnDefinitions="Auto,*,Auto,*">
+            <Label Grid.Column="0" Text="{Binding From2}" />
+            <Editor Grid.Column="1" Text="{Binding Money2}" />
+            <Label Grid.Column="2" Text="{Binding To2}" />
+            <Editor Grid.Column="3" Text="{Binding Result2}" />
+        </Grid>
+
+        <Grid ColumnDefinitions="Auto,*,Auto,*">
+            <Label Grid.Column="0" Text="{Binding From3}" />
+            <Editor Grid.Column="1" Text="{Binding Money3}" />
+            <Label Grid.Column="2" Text="{Binding To3}" />
+            <Editor Grid.Column="3" Text="{Binding Result3}" />
+        </Grid>
+
+        <Grid ColumnDefinitions="Auto,*,Auto,*">
+            <Label Grid.Column="0" Text="{Binding From4}" />
+            <Editor Grid.Column="1" Text="{Binding Money4}" />
+            <Label Grid.Column="2" Text="{Binding To4}" />
+            <Editor Grid.Column="3" Text="{Binding Result4}" />
+        </Grid>
+
+        <Grid ColumnDefinitions="Auto,*,Auto,*">
+            <Label Grid.Column="0" Text="{Binding From5}" />
+            <Editor Grid.Column="1" Text="{Binding Money5}" />
+            <Label Grid.Column="2" Text="{Binding To5}" />
+            <Editor Grid.Column="3" Text="{Binding Result5}" />
+        </Grid>
+
+        <Button Text="Update" Command="{Binding GetExchangeRateCommand}" Margin="10,2,10,2"/>
+    </VerticalStackLayout>
+</ContentPage>
